@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservasi Berhasil - Cold N Brew</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('Video1.jpg') no-repeat center center fixed;
+            background-size: cover; /* Mengatur gambar agar memenuhi layar */
+            text-align: center;
+            padding: 50px;
+            color: #333;
+        }
+        .success-message {
+            background: rgba(255, 255, 255, 0.9); /* Transparansi agar teks terlihat jelas */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+        }
+        h2 {
+            color: #6b3e26;
+        }
+    </style>
+</head>
+<body>
+    <div class="success-message">
+        <h2>Reservasi Anda Berhasil!</h2>
+        <p><strong>Untuk nomor meja akan kami informasikan melalui Email dan SMS:</strong></p>
+        <p>Terima kasih telah melakukan reservasi di Cold N Brew Coffee.</p>
+        <p><strong>Detail Reservasi:</strong></p>
+        <p><strong>Nama:</strong> <span id="nameDisplay"></span></p>
+        <p><strong>Email:</strong> <span id="emailDisplay"></span></p>
+        <p><strong>Telepon:</strong> <span id="phoneDisplay"></span></p>
+        <p><strong>Tanggal:</strong> <span id="dateDisplay"></span></p>
+        <p><strong>Waktu:</strong> <span id="timeDisplay"></span></p>
+        <p><strong>Jumlah Orang:</strong> <span id="peopleDisplay"></span></p>
+    </div>
+
+    <script>
+        // Ambil data dari Local Storage dan tampilkan
+        document.getElementById('nameDisplay').textContent = localStorage.getItem('name');
+        document.getElementById('emailDisplay').textContent = localStorage.getItem('email');
+        document.getElementById('phoneDisplay').textContent = localStorage.getItem('phone');
+        document.getElementById('dateDisplay').textContent = localStorage.getItem('date');
+        document.getElementById('timeDisplay').textContent = localStorage.getItem('time');
+        document.getElementById('peopleDisplay').textContent = localStorage.getItem('people');
+    </script>
+</body>
+</html>
+

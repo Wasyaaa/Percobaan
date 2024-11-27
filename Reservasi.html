@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservasi Cold N Brew Coffee</title>
+    <style>
+        /* Tambahkan style sesuai kebutuhan Anda */
+        body {
+            font-family: Arial, sans-serif;
+            background: url('Video1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+        .reservation {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9); /* Transparansi sedikit */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            margin: auto;
+            margin-top: 50px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #6b3e26;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4e2c1b;
+        }
+    </style>
+    <script>
+        function simpanData() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const people = document.getElementById('people').value;
+
+            // Simpan data di Local Storage
+            localStorage.setItem('name', name);
+            localStorage.setItem('email', email);
+            localStorage.setItem('phone', phone);
+            localStorage.setItem('date', date);
+            localStorage.setItem('time', time);
+            localStorage.setItem('people', people);
+            
+            // Arahkan ke halaman berhasil
+            window.location.href = 'Berhasil.html';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1></h1>
+    </header>
+    
+    <main>
+        <section class="reservation">
+            <h2>Reservasi Meja Anda</h2>
+            <form id="reservation-form" onsubmit="simpanData(); return false;">
+                <div class="form-group">
+                    <label for="name">Nama:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Nomor Telepon:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">Tanggal Reservasi:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Waktu Reservasi:</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+                <div class="form-group">
+                    <label for="people">Jumlah Orang:</label>
+                    <input type="number" id="people" name="people" min="1" required>
+                </div>
+                <button type="submit">Kirim Reservasi</button>
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Cold N Brew. All rights reserved.</p>
+    </footer>
+</body>
+</html>
